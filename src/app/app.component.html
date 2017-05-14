@@ -1,4 +1,21 @@
 <nav>
+  <div flexLayout="row" fxLayout.lt-sm="column" class="nav-container clearfix">
+    <div fxLayout.md="row" fxLayoutAlign="start" fxFlex="30" fxLayoutAlign.lt-md="center" flexOrder.md="2" fxFlex.lt-md="20" class="logo-placeholder">
+      <button md-button color="primary" (click)="sendRedirect('home')">My App Logo</button>
+    </div>
+    <div fxLayout.lt-md="row" fxLayoutAlign.lt-md="space-around" fxFlex="40" fxFlex.lt-md="80" fxFlex.xs="10" flexOrder.md="1">
+        <form>
+          <button md-button class="srch-btn" color="primary" (click)="sendData(srchtxt.value)"><md-icon>search</md-icon></button>
+          <div class="srch-box-wrap">
+              <input type="text" class="srch-box" #srchtxt>
+          </div>
+        </form>
+        <button fxHide fxShow.lt-md md-mini-fab color="primary" (click)="sendRedirect('header')" class="user-icon small"><md-icon>person</md-icon></button>
+    </div>
+    <div fxHide.lt-md fxLayoutAlign="end" fxLayoutAlign.lt-md="center" fxFlex="30" flexOrder.md="3">
+      <button md-raised-button color="primary" class="user-icon" (click)="sendRedirect('header')"><md-icon>person</md-icon>{{uname}}</button>
+    </div>
+  </div>
   <!--
     <md-card>
       <md-card-content>

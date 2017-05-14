@@ -1,4 +1,5 @@
-import { Component, ViewChild, EventEmitter, Output, Inject } from '@angular/core';
+import { Component, ViewChild, EventEmitter,
+         Output, Inject, HostListener } from '@angular/core';
 import { MdDatepicker, MdDialogRef } from '@angular/material';
 
 import { SharedService } from './app.shared.service';
@@ -9,13 +10,19 @@ import { SharedService } from './app.shared.service';
 })
 export class AppComponent {
   title = 'app works!';
-
+  uname:string = "Srinivas, Pawan kalyan";
   constructor(@Inject('shared') private shared: SharedService){
     shared.missionConfirmed$.subscribe(
       data => {
         console.log(data);
       }
     );
+  }
+
+  @HostListener('window:save', ['$event'])
+  doRoute(event){
+      let uname = event.detail.uname;
+      this.uname = uname && uname.length > 0?uname:this.uname;
   }
 
   @Output()
@@ -36,18 +43,11 @@ export class AppComponent {
       this.remind.close();
     }
   }
-  saveDate(val){
-    console.log(`Component --> ${val}`);
-    window.dispatchEvent(new CustomEvent('test', {detail: {title: val,name: 'newValue'}}));
-    this.shared.announceMission('Deepak');
-    this.urlEmitter.emit('Deepak emitted');
+  sendData(val){
+    window.dispatchEvent(new CustomEvent('srch', {detail: {data: val}}));
   }
 
-  sendRedirect(url){
+  sendRedirect(url): void{
     window.dispatchEvent(new CustomEvent('routing', {detail: {url:url}}));
-  }
-
-  navigator(){
-    this.urlEmitter.emit('Deepak');
   }
 }

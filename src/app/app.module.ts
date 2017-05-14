@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 import { AppMaterialSpecifics } from './app-material-specifics';
 
@@ -17,6 +18,7 @@ import { MdNativeDateModule,NativeDateAdapter, DateAdapter } from '@angular/mate
     FormsModule,
     HttpModule,
     AppMaterialSpecifics,
+    FlexLayoutModule,
     MdNativeDateModule
   ],
   providers: [

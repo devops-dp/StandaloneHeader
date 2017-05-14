@@ -33,3 +33,11 @@ html, body{
 .mat-calendar-body-selected::before {
     display: none !important;
 }
+
+.clearfix:after, .clearfix:before{
+    content: '.';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
