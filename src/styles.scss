@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'theme';
+
+html, body{
+    margin: 0;
+    padding: 0;
+    background: #555555;
+    font-family: 'Segoe UI', Helvetica, sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+.mat-calendar-body-cell-content{
+    border: 1px solid #eeeeee;
+}
+
+.mat-calendar-body-today:not(.mat-calendar-body-selected) {
+    border-color: rgba(0, 0, 0, 0.38);
+}
+
+.mat-calendar-body-cell-content.mat-calendar-body-today:before {
+    content: '';
+    display: block;
+    width: 4px;
+    background-color: #2196f3;
+    border-radius: 50%;
+    top: 4px;
+    position: absolute;
+    left: 50%;
+    height: 4px;
+    margin-left: -2px;
+}
+
+.mat-calendar-body-selected::before {
+    display: none !important;
+}

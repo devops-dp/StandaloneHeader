@@ -1,3 +1,18 @@
-<h1>
-  {{title}}
-</h1>
+<nav>
+  <!--
+    <md-card>
+      <md-card-content>
+        <md-input-container class="reminder" >
+          <input mdInput [mdDatepicker]="remind" placeholder="Choose date to remind..." #dated>
+          <a mdSuffix class="clear" *ngIf="!dated.disabled && dated.value.length>0" (click)="clearDate(dated, false)"><md-icon>clear</md-icon></a>
+          <button mdSuffix [mdDatepickerToggle]="remind"></button>
+          <md-datepicker #remind></md-datepicker>
+        </md-input-container>
+        <button md-mini-fab color="primary" (click)="saveDate(dated.value)"><md-icon>save</md-icon></button>
+      </md-card-content>
+      <md-card-actions>
+        <a md-button color="primary" (click)="sendRedirect('header')"><md-icon>http</md-icon></a>
+      </md-card-actions>
+    </md-card>
+  -->
+</nav>
